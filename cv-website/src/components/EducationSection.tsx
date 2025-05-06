@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface EducationCardProps {
   institution: string;
@@ -31,22 +32,15 @@ const EducationCard: React.FC<EducationCardProps> = ({
 };
 
 const EducationSection: React.FC = () => {
-  const educations = [
-    {
-      institution: "McGill University",
-      degree: "Certificate in Management",
-      year: "2024–2025",
-      description:
-        "Exchange year focusing on strategic management and international business.",
-    },
-    {
-      institution: "Epitech – European Institute of Technology",
-      degree: "Master's in Software Engineering",
-      year: "2021–2026",
-      description:
-        "Project-based learning with emphasis on collaboration, algorithms, systems, and software architecture.",
-    },
-  ];
+  const { t } = useTranslation();
+
+  const educationSlugs = ["mcgill", "epitech"];
+  const educations = educationSlugs.map((slug) => ({
+    institution: t(`education.${slug}.institution`),
+    degree: t(`education.${slug}.degree`),
+    year: t(`education.${slug}.year`),
+    description: t(`education.${slug}.description`),
+  }));
 
   return (
     <section id="education" className="py-16 bg-white">
@@ -58,7 +52,7 @@ const EducationSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Education
+            {t("education.title")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

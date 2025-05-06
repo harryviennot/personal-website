@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface ExperienceCardProps {
   title: string;
@@ -19,6 +20,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   description,
   isExtra = false,
 }) => {
+  const { t } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -38,7 +40,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         to={`/experience/${slug}`}
         className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300"
       >
-        Read More
+        {t("experience.readMore")}
         <svg
           className="ml-1 w-4 h-4"
           fill="currentColor"
@@ -57,33 +59,17 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 };
 
 const ExperienceSection: React.FC = () => {
-  const experiences = [
-    {
-      title: "DevOps Intern",
-      company: "BPCE IT",
-      slug: "bpce",
-      date: "Oct 2023 – June 2024",
-      description:
-        "Worked on automating CI/CD pipelines and deploying infrastructure with Kubernetes. Participated in internal tooling enhancements and improved system performance monitoring.",
-    },
-    {
-      title: "Software Development Intern",
-      company: "Strategin",
-      slug: "strategin",
-      date: "June 2023 – Sept 2023",
-      description:
-        "Developed full-stack features for client applications using React and Node.js. Collaborated with design and product teams to implement responsive UI components.",
-    },
-    {
-      title: "Hackathon",
-      company: "Airbus Innovation Week",
-      slug: "airbus-hackathon",
-      date: "March 2023",
-      description:
-        "Participated in a 48-hour hackathon focused on sustainable aviation solutions. Developed a prototype for reducing carbon emissions through optimized flight planning.",
-      isExtra: true,
-    },
-  ];
+  const { t } = useTranslation();
+
+  const experienceSlugs = ["bpce", "strategin", "airbusHackathon"];
+  const experiences = experienceSlugs.map((slug) => ({
+    slug: slug,
+    title: t(`experience.${slug}.title`),
+    company: t(`experience.${slug}.company`),
+    date: t(`experience.${slug}.date`),
+    description: t(`experience.${slug}.description`),
+    isExtra: slug === "airbusHackathon",
+  }));
 
   return (
     <section id="experience" className="py-16 bg-gray-50">
@@ -95,7 +81,7 @@ const ExperienceSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Work Experience
+            {t("experience.title")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

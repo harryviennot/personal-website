@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 // import DevOpsCycleAnimation from "./DevOpsCycleAnimation"; // Removed animation import
 
 const HeroSection: React.FC = () => {
+  const { t } = useTranslation();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -31,7 +33,7 @@ const HeroSection: React.FC = () => {
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <img
                 src="/profile.jpeg"
-                alt="Harry Viennot"
+                alt={t("hero.profileAlt")}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -45,10 +47,10 @@ const HeroSection: React.FC = () => {
             className="order-2 md:order-2"
           >
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-              Harry Viennot
+              {t("hero.headline")}
             </h1>
             <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-500">
-              Software Developer & DevOps Enthusiast
+              {t("hero.subtitle")}
             </p>
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-4">
               <motion.a
@@ -59,7 +61,7 @@ const HeroSection: React.FC = () => {
                 download
                 className="rounded-md bg-blue-600 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-all duration-300"
               >
-                Download CV
+                {t("hero.downloadCV")}
               </motion.a>
               <motion.button
                 initial={{ opacity: 0, y: 20 }}
@@ -68,7 +70,7 @@ const HeroSection: React.FC = () => {
                 onClick={() => scrollToSection("contact")}
                 className="rounded-md bg-gray-100 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-md font-semibold text-gray-800 shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-all duration-300"
               >
-                Contact Info
+                {t("hero.contactInfo")}
               </motion.button>
             </div>
           </motion.div>

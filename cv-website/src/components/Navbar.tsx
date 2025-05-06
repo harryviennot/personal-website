@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar: React.FC = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -60,7 +63,7 @@ const Navbar: React.FC = () => {
               onClick={() => window.scrollTo(0, 0)}
               className="text-xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-300"
             >
-              Harry Viennot
+              {t("navbar.brand")}
             </button>
           </motion.div>
 
@@ -70,25 +73,25 @@ const Navbar: React.FC = () => {
                 onClick={() => scrollToSection("about")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
-                About Me
+                {t("navbar.about")}
               </button>
               <button
                 onClick={() => scrollToSection("experience")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
-                Experience
+                {t("navbar.experience")}
               </button>
               <button
                 onClick={() => scrollToSection("projects")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
-                Projects
+                {t("navbar.projects")}
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
-                Contact
+                {t("navbar.contact")}
               </button>
               <a
                 href="https://github.com/harryviennot"
@@ -96,7 +99,7 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
-                GitHub
+                {t("navbar.github")}
               </a>
               <a
                 href="https://linkedin.com/in/harryviennot"
@@ -104,13 +107,16 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
-                LinkedIn
+                {t("navbar.linkedin")}
               </a>
+              <LanguageSwitcher />
             </div>
           </div>
 
-          <div className="md:hidden">
-            {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <div className="mr-2">
+              <LanguageSwitcher />
+            </div>
             <button
               onClick={toggleMobileMenu}
               className="text-gray-800 hover:text-gray-600 p-2"
@@ -134,7 +140,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide based on menu state */}
       <div className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
           <button
@@ -144,7 +149,7 @@ const Navbar: React.FC = () => {
             }}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
-            About Me
+            {t("navbar.about")}
           </button>
           <button
             onClick={() => {
@@ -153,7 +158,7 @@ const Navbar: React.FC = () => {
             }}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
-            Experience
+            {t("navbar.experience")}
           </button>
           <button
             onClick={() => {
@@ -162,7 +167,7 @@ const Navbar: React.FC = () => {
             }}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
-            Projects
+            {t("navbar.projects")}
           </button>
           <button
             onClick={() => {
@@ -171,24 +176,27 @@ const Navbar: React.FC = () => {
             }}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
-            Contact
+            {t("navbar.contact")}
           </button>
           <a
             href="https://github.com/harryviennot"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
+            className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
-            GitHub
+            {t("navbar.github")}
           </a>
           <a
             href="https://linkedin.com/in/harryviennot"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
+            className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
-            LinkedIn
+            {t("navbar.linkedin")}
           </a>
+          <div className="px-3 py-2">
+            <LanguageSwitcher isMobile={true} />
+          </div>
         </div>
       </div>
     </nav>

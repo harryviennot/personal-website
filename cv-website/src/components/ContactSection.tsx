@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const ContactSection: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,13 +14,15 @@ const ContactSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Contact Me
+            {t("contact.title")}
           </h2>
 
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  {t("contact.getInTouch")}
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <svg
@@ -36,7 +40,7 @@ const ContactSection: React.FC = () => {
                       />
                     </svg>
                     <span className="text-gray-700">
-                      harry.viennot@example.com
+                      {t("contact.emailAddress")}
                     </span>
                   </div>
                   <div className="flex items-center">
@@ -54,7 +58,7 @@ const ContactSection: React.FC = () => {
                       rel="noopener noreferrer"
                       className="text-gray-700 hover:text-gray-900 transition-colors duration-300"
                     >
-                      github.com/harryviennot
+                      {t("contact.githubHandle")}
                     </a>
                   </div>
                   <div className="flex items-center">
@@ -72,21 +76,23 @@ const ContactSection: React.FC = () => {
                       rel="noopener noreferrer"
                       className="text-gray-700 hover:text-gray-900 transition-colors duration-300"
                     >
-                      linkedin.com/in/harryviennot
+                      {t("contact.linkedinHandle")}
                     </a>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  {t("contact.sendMessageTitle")}
+                </h3>
                 <form className="space-y-4">
                   <div>
                     <label
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Name
+                      {t("contact.form.nameLabel")}
                     </label>
                     <input
                       type="text"
@@ -99,7 +105,7 @@ const ContactSection: React.FC = () => {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Email
+                      {t("contact.form.emailLabel")}
                     </label>
                     <input
                       type="email"
@@ -112,7 +118,7 @@ const ContactSection: React.FC = () => {
                       htmlFor="message"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Message
+                      {t("contact.form.messageLabel")}
                     </label>
                     <textarea
                       id="message"
@@ -124,7 +130,7 @@ const ContactSection: React.FC = () => {
                     type="submit"
                     className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
                   >
-                    Send Message
+                    {t("contact.form.sendButton")}
                   </button>
                 </form>
               </div>

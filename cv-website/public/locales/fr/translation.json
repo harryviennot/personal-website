@@ -1,0 +1,189 @@
+{
+  "languageSwitcher": {
+    "english": "Anglais",
+    "french": "Français",
+    "ariaLabel": "Changer de langue"
+  },
+  "navbar": {
+    "brand": "Harry Viennot",
+    "about": "À propos",
+    "experience": "Expériences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "hero": {
+    "profileAlt": "Harry Viennot",
+    "headline": "Harry Viennot",
+    "subtitle": "Développeur Logiciel & Passionné de DevOps",
+    "downloadCV": "Télécharger le CV",
+    "contactInfo": "Infos de contact"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Je suis un étudiant français en ingénierie logicielle actuellement en échange à l’Université McGill, avec une solide formation à Epitech. Je m’intéresse à l’automatisation des systèmes, au DevOps, et à la création d’outils numériques à impact. J’aime travailler sur des projets stimulants et je crois en un code propre, efficace et bien conçu. J’ai toujours envie de collaborer et d’apprendre des autres."
+  },
+  "experience": {
+    "title": "Expériences professionnelles",
+    "readMore": "En savoir plus",
+    "bpce": {
+      "title": "Stagiaire DevOps",
+      "company": "BPCE IT",
+      "date": "Oct 2023 – Juin 2024",
+      "description": "Automatisation des pipelines CI/CD et déploiement d’infrastructure avec Kubernetes. Amélioration des outils internes et du monitoring des performances système.",
+      "fullDescription": "En tant que stagiaire DevOps chez BPCE IT à Toulouse, j’ai intégré l’équipe Guichet SI Établissements au sein de la Plateforme Privative. Mon rôle consistait à automatiser et standardiser les chaînes de déploiement pour des logiciels internes tels qu’Adequasys et UAS. J’ai contribué à la conception et à la mise en place de pipelines CI/CD, à l’orchestration des services via MyCloud, et à la maintenance de templates d’infrastructure. J’ai utilisé Jenkins, Bitbucket, Artifactory, XLR/XLD dans un environnement Agile avec des réunions d’équipe régulières.",
+      "responsibilities": [
+        "Automatisation de la mise en place d’environnements via MyCloud et Jenkins",
+        "Implémentation de templates réutilisables pour XLRelease et Jenkins",
+        "Création et maintenance des dépôts Bitbucket et Jenkinsfiles",
+        "Orchestration des flux CI/CD avec Jenkins, Artifactory et Bitbucket",
+        "Participation à la transition Agile et aux réunions quotidiennes de coordination"
+      ],
+      "achievements": [
+        "Mise en place d’un pipeline de déploiement standardisé pour plus de 20 projets",
+        "Réduction du temps de configuration grâce à l’automatisation",
+        "Documentation complète des architectures de pipelines pour l’onboarding"
+      ]
+    },
+    "strategin": {
+      "title": "Stagiaire Développement Logiciel",
+      "company": "Strateg.in",
+      "date": "Août 2022 – Décembre 2022",
+      "description": "Développement de fonctionnalités full-stack pour des applications clients avec React et Node.js. Collaboration avec les équipes design et produit pour l’intégration d’interfaces responsives.",
+      "fullDescription": "Chez Strateg.in, une entreprise de transformation digitale pour PME, j’ai travaillé sur plusieurs projets web, ERP et une application mobile. J’ai développé des fonctionnalités côté frontend et backend, comme des tableaux de bord, un système de suivi de progression des utilisateurs, et des exports automatiques. J’ai également intégré des APIs, effectué des déploiements avec Docker et Kubernetes, et conçu des algorithmes de recommandation de cours.",
+      "responsibilities": [
+        "Correction de bugs et génération de fichiers PDF/Excel dans le projet 'La Méthode Citoyenne'",
+        "Développement de fonctionnalités clés pour 'AEP Formation' (ERP, statuts des cours, algorithmes de recommandation)",
+        "Création du dashboard utilisateur et redirection après connexion",
+        "Suivi de progression des utilisateurs via l’API et refonte du modèle de données",
+        "Amélioration de l’application mobile 'Car Co' (bugs, annulations d’évènements, etc.)"
+      ],
+      "achievements": [
+        "Création d’un algorithme de recommandation basé sur l’historique utilisateur",
+        "Lead sur la partie dashboard et ERP d’AEP Formation",
+        "Adaptation rapide à différents stacks techniques (React, Next.js, mobile)",
+        "Transition réussie de l’apprentissage académique vers un workflow professionnel"
+      ]
+    },
+    "airbusHackathon": {
+      "title": "Hackathon",
+      "company": "Airbus Innovation Week",
+      "date": "Mars 2023",
+      "description": "Participation à un hackathon de 48h sur l’aviation durable. Développement d’un prototype pour optimiser les trajets de vol et réduire les émissions de carbone.",
+      "fullDescription": "J’ai participé à l’Airbus Innovation Week, un hackathon axé sur les solutions pour une aviation durable. En équipe de quatre, nous avons conçu un prototype d’application utilisant le machine learning pour optimiser les routes aériennes afin de réduire la consommation de carburant.",
+      "responsibilities": [
+        "Responsable du développement frontend du prototype",
+        "Intégration d’APIs de données de vol et de systèmes cartographiques",
+        "Présentation du projet devant le jury Airbus",
+        "Collaboration sur le développement de l’algorithme de calcul de trajectoire"
+      ],
+      "achievements": [
+        "Prix de la solution la plus innovante",
+        "Prototype montrant une réduction potentielle de 5 % de consommation",
+        "Prototype finalisé en moins de 48h"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "mirage": {
+      "name": "Mirage",
+      "description": "Outil de visualisation d'infrastructure cloud générant des diagrammes interactifs à partir de templates Terraform ou CloudFormation.",
+      "fullDescription": "Mirage est un outil destiné aux développeurs permettant de générer automatiquement des diagrammes visuels de l'infrastructure cloud définie via du code (IaC) comme Terraform ou CloudFormation. Il analyse les fichiers, détecte les relations entre ressources et produit des visualisations interactives pour mieux comprendre les architectures cloud complexes. Mirage supporte AWS, Azure et GCP.",
+      "duration": "Mar 2022 - Août 2022"
+    },
+    "movieMatch": {
+      "name": "Movie Match",
+      "description": "App React Native permettant à des amis de matcher sur des films et créer des watchlists collaboratives avec chat intégré.",
+      "fullDescription": "Movie Match est une application mobile développée avec React Native permettant aux utilisateurs de swiper sur des films. Lorsqu’un match est établi entre amis, le film est ajouté à une liste collaborative. L’app inclut un chat en temps réel et utilise l’API TheMovieDB pour récupérer les informations de films.",
+      "duration": "Sept 2022 - Déc 2022"
+    },
+    "botbutler": {
+      "name": "BotButler",
+      "description": "Plateforme d’assistant IA connectée à Slack et Jira pour automatiser les workflows internes avec ingestion de fichiers.",
+      "fullDescription": "BotButler est une plateforme d’assistant intelligent intégrée à Slack, Jira et d’autres outils d’entreprise pour automatiser des tâches courantes. Elle utilise le NLP pour interpréter les requêtes des utilisateurs et peut analyser les fichiers internes pour générer des réponses contextuelles ou exécuter des actions.",
+      "duration": "Jan 2023 - Aujourd’hui"
+    },
+    "switchecs": {
+      "name": "Switchecs",
+      "description": "Jeu d’échecs où l’échiquier pivote aléatoirement",
+      "fullDescription": "Switchecs est une variante amusante du jeu d’échecs : l’échiquier change d’orientation de manière aléatoire après un certain nombre de coups. Développé avec une interface web simple, il propose une nouvelle approche stratégique du jeu classique.",
+      "duration": "Fév 2022 - Fév 2022"
+    }
+  },
+  "education": {
+    "title": "Éducation",
+    "mcgill": {
+      "institution": "Université McGill",
+      "degree": "Certificat en Management",
+      "year": "2024–2025",
+      "description": "Année d’échange axée sur la gestion stratégique et les affaires internationales."
+    },
+    "epitech": {
+      "institution": "Epitech – European Institute of Technology",
+      "degree": "Master en Ingénierie Logicielle",
+      "year": "2021–2026",
+      "description": "Apprentissage par projets avec un focus sur la collaboration, les algorithmes, les systèmes et l’architecture logicielle."
+    }
+  },
+  "extras": {
+    "title": "Extras",
+    "languages": {
+      "title": "Français (natif), Anglais (courant), Espagnol (intermédiaire)",
+      "category": "Langues",
+      "description": "À l’aise dans des environnements multilingues"
+    },
+    "certification": {
+      "title": "AWS Certified Developer Associate",
+      "category": "Certification",
+      "description": "Obtenue en 2023"
+    },
+    "volunteer": {
+      "title": "Bénévole Tech chez CodeForAll",
+      "category": "Bénévolat",
+      "description": "Enseignement du code à des jeunes défavorisés"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "getInTouch": "Entrer en contact",
+    "emailAddress": "harry.viennot@example.com",
+    "githubHandle": "github.com/harryviennot",
+    "linkedinHandle": "linkedin.com/in/harryviennot",
+    "sendMessageTitle": "Envoyer un message",
+    "form": {
+      "nameLabel": "Nom",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "sendButton": "Envoyer"
+    }
+  },
+  "experienceDetailPage": {
+    "notFound": {
+      "title": "Expérience introuvable",
+      "message": "L’expérience que vous recherchez n’existe pas."
+    },
+    "backToExperience": "Retour aux expériences",
+    "overviewTitle": "Présentation",
+    "responsibilitiesTitle": "Responsabilités",
+    "toolsTitle": "Outils & Technologies",
+    "achievementsTitle": "Principales réalisations"
+  },
+  "projectDetailPage": {
+    "notFound": {
+      "title": "Projet introuvable",
+      "message": "Le projet que vous recherchez n’existe pas."
+    },
+    "backToProjects": "Retour aux projets",
+    "techStackTitle": "Technologies",
+    "descriptionTitle": "Description",
+    "screenshotsTitle": "Captures d’écran",
+    "screenshotAltText": "Capture {{number}} du projet {{projectName}}",
+    "linksTitle": "Liens",
+    "viewSourceGithub": "Voir le code sur GitHub"
+  },
+  "app": {
+    "loading": "Chargement..."
+  }
+}

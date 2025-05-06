@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface ExtraItemProps {
   title: string;
@@ -26,23 +27,14 @@ const ExtraItem: React.FC<ExtraItemProps> = ({
 };
 
 const ExtrasSection: React.FC = () => {
-  const extras = [
-    {
-      title: "French (Native), English (Fluent), Spanish (Intermediate)",
-      category: "Languages",
-      description: "Comfortable working in multilingual environments",
-    },
-    {
-      title: "AWS Certified Developer Associate",
-      category: "Certification",
-      description: "Obtained in 2023",
-    },
-    {
-      title: "Tech Volunteer at CodeForAll",
-      category: "Volunteer",
-      description: "Teaching coding to underprivileged youth",
-    },
-  ];
+  const { t } = useTranslation();
+
+  const extraSlugs = ["languages", "certification", "volunteer"];
+  const extras = extraSlugs.map((slug) => ({
+    title: t(`extras.${slug}.title`),
+    category: t(`extras.${slug}.category`),
+    description: t(`extras.${slug}.description`),
+  }));
 
   return (
     <section id="extras" className="py-16 bg-white">
@@ -54,7 +46,7 @@ const ExtrasSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Extras
+            {t("extras.title")}
           </h2>
 
           <div className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-xl shadow-sm">
