@@ -89,27 +89,186 @@
     "title": "Projects",
     "mirage": {
       "name": "Mirage",
-      "description": "A cloud infrastructure visualization tool that generates interactive diagrams from your terraform or cloudformation templates.",
-      "fullDescription": "Mirage is a developer tool that automatically generates visual diagrams of cloud infrastructure defined in IaC templates like Terraform or CloudFormation. The tool parses template files, analyzes resource relationships, and produces interactive, shareable diagrams that help teams understand complex infrastructure setups. Mirage supports AWS, Azure, and GCP resources, with real-time updates as infrastructure code changes.",
-      "duration": "Mar 2022 - Aug 2022"
+      "duration": "March 2024 – Present",
+      "github": null,
+      "overview": "Mirage is a SaaS application that allows users to deploy, configure, and operate contextual AI agents within custom workspaces. The platform centralizes the management of connected services, files, and models to enhance team productivity.",
+      "context": "This project was initiated to solve a recurring issue in companies: the siloing of information and the difficulty of leveraging AI in an integrated way. The idea was to create a modular platform that centralizes AI agent configuration, connects them to business tools, and contextualizes internal data. Audience: Technical administrators, customer support teams, internal developers.",
+      "app": {
+        "summary": "Users can create isolated workspaces to deploy AI agents configured with file context and service connections. Administrators can manage services (Slack, Jira, etc.) via OAuth, import documents for RAG, and configure AI models per workspace.",
+        "screenshots": [
+          {
+            "url": "/screenshots/mirage-dashboard.png",
+            "caption": "Super admin dashboard – Service card view"
+          },
+          {
+            "url": "/screenshots/mirage-space-model.png",
+            "caption": "Workspace page – Model tab for RAG configuration"
+          },
+          {
+            "url": "/screenshots/mirage-service-form.png",
+            "caption": "Service creation – Three-step form"
+          }
+        ]
+      },
+      "design": {
+        "description": "Design Goals: Clean interface, SaaS dashboard style; Smooth and responsive navigation between pages; Consistent user experience for super admins and workspace admins. Process: I designed the mockups on Figma following a modular structure. Each page is divided into components: service cards, multi-section forms, space pages with tabs (chat, files, models, settings...).",
+        "figma": null
+      },
+      "stack": {
+        "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        "backend": ["Node.js", "FastAPI", "Redis", "PostgreSQL", "Prisma"],
+        "devops": ["GitHub Actions", "Docker"],
+        "ai": [
+          "OpenAI API",
+          "RAG (Retrieval-Augmented Generation)",
+          "Langchain (upcoming)"
+        ],
+        "apis": [],
+        "libraries": [],
+        "tools": []
+      },
+      "architecture": {
+        "text": "Structure: Mirage is organized as multi-tenant with isolated workspaces. Each space can manage its files, models, and service connections via OAuth2 connectors. Data Flow: User queries are handled server-side, enriched via a RAG engine based on imported files, then sent to OpenAI's API. Files are segmented and vectorized in advance.",
+        "diagram": null
+      },
+      "challenges": [
+        "Designing a flexible interface to handle various service types",
+        "Integrating dynamic authentication configuration (OAuth2, static tokens...)",
+        "Optimizing vectorization and contextual retrieval for the RAG system"
+      ]
     },
-    "movieMatch": {
+    "moviematch": {
       "name": "Movie Match",
-      "description": "React Native app to match on movies with friends and create collaborative watchlists. Features real-time chat and integration with TheMovieDB API.",
-      "fullDescription": "Movie Match is a mobile application built with React Native that helps friends decide what movies to watch together. Users can swipe on movies (similar to dating apps) and when there's a match between friends, it's added to a collaborative watchlist. The app features real-time chat so users can discuss their matched movies, and integrates with TheMovieDB API for comprehensive movie data, trailers, and reviews.",
-      "duration": "Sep 2022 - Dec 2022"
+      "duration": "September 2022 – Present",
+      "github": null,
+      "overview": "Movie Match is a mobile app designed to help friends and families choose a movie to watch together. It combines a swiping system inspired by dating apps and real-time updates on swiped movies.",
+      "context": "This project was born out of frustration from spending too much time choosing the perfect movie across streaming platforms. I wanted to gather all movies in one place and gamify the experience. It was also a way to improve my design skills and learn more about React Native animations and real-time data sync.",
+      "app": {
+        "summary": "The user starts a lobby by choosing available streaming platforms, and others can join using a game pin. Once connected, the admin starts the game and users select preferred genres. Movies are recommended based on the most compatible genre mix. Swiped-right movies are added to a playlist visible to all.",
+        "screenshots": [
+          {
+            "url": "/screenshots/movie-match-lobby.png",
+            "caption": "Lobby"
+          }
+        ]
+      },
+      "design": {
+        "description": "I wanted a playful cinema-inspired ambiance. I chose a dark theme and game-like font. The movie card shows key info at a glance, with details like synopsis, platforms, and IMDb links on the flip side.",
+        "figma": "https://www.figma.com/design/FemeYv6ANlWLGDvwfXAs7s/Movie-Match?node-id=0-1&t=Biku71eBnypPWQaR-1"
+      },
+      "stack": {
+        "frontend": ["React Native", "Expo"],
+        "backend": ["Python FastAPI", "MongoDB", "Firebase"],
+        "apis": [
+          "Streaming Availability (RapidAPI)",
+          "TheMovieDatabase",
+          "OMDB"
+        ]
+      },
+      "architecture": {
+        "text": "Text",
+        "diagram": "/diagrams/movie-match.png"
+      },
+      "challenges": [
+        "Combining multiple free or low-cost APIs to avoid IMDb's €300,000 license",
+        "Designing an effective recommendation algorithm with limited data"
+      ]
     },
     "botbutler": {
       "name": "BotButler",
-      "description": "AI assistant platform that connects to services like Slack and Jira to automate internal workflows using contextual data and file ingestion.",
-      "fullDescription": "BotButler is an AI assistant platform that integrates with popular workplace tools like Slack and Jira to automate routine tasks and workflows. The platform uses natural language processing to understand user requests and can access company knowledge bases to provide contextual responses. BotButler can ingest files, analyze them, and take action based on their content, making it a powerful tool for streamlining business processes.",
-      "duration": "Jan 2023 - Present"
+      "duration": "January 2023 – Present",
+      "github": null,
+      "overview": "BotButler is an AI assistant platform that connects to internal tools (Slack, Jira, Notion, etc.) to automate workflows, provide contextual answers, and act proactively.",
+      "context": "This tool was designed to help companies leverage internal data via AI while keeping control over permissions and tool connections. It's part of an AI-augmented productivity approach for distributed teams. Audience: SMEs, product teams, support teams, or any company using multiple SaaS tools with complex internal knowledge.",
+      "app": {
+        "summary": "Administrators can configure AI agents that connect to services via OAuth, ingest company documents for context, and define custom actions. Users interact with agents via Slack or web interfaces to get instant answers about internal documentation or trigger workflow actions.",
+        "screenshots": [
+          {
+            "url": "/screenshots/botbutler-agent-view.png",
+            "caption": "AI Agent view – connection status and logs"
+          },
+          {
+            "url": "/screenshots/botbutler-action-config.png",
+            "caption": "Custom action configuration for Jira and Slack"
+          },
+          {
+            "url": "/screenshots/botbutler-context-editor.png",
+            "caption": "Context editor – file ingestion and metadata"
+          }
+        ]
+      },
+      "design": {
+        "description": "Design Goals: Create a minimalist interface where admins can manage each AI agent; Highlight active service connections (Slack, Jira...); Provide real-time visual feedback on AI queries. Process: I first mapped the conversational architecture and typical use cases (answering questions, triggering actions, returning files).",
+        "figma": null
+      },
+      "stack": {
+        "frontend": ["React", "TypeScript", "Tailwind CSS"],
+        "backend": ["Node.js", "Express", "PostgreSQL"],
+        "ai": [
+          "OpenAI API",
+          "Langchain (upcoming)",
+          "Vector Stores (Pinecone, Redis)"
+        ],
+        "apis": ["Slack API", "Jira REST API", "OAuth 2.0", "Webhook Handlers"],
+        "devops": [],
+        "libraries": [],
+        "tools": []
+      },
+      "architecture": {
+        "text": "Structure: Each AI agent runs in an isolated environment with its own services, files, and logs. The central system manages OAuth, endpoint configuration, and vector sync. User queries go through a parser, RAG layer, then OpenAI. Data Flow: User submits a query via Slack or web. The agent checks permissions, retrieves context from a vector store, generates a response via OpenAI, and performs actions.",
+        "diagram": null
+      },
+      "challenges": [
+        "Implementing fine-grained permissions between agents, users, and services",
+        "Maintaining consistent context-aware answers with long/ambiguous documents",
+        "Ensuring OAuth and action security"
+      ]
     },
     "switchecs": {
       "name": "Switchecs",
-      "description": "A chess game where the board flips randomly",
-      "fullDescription": "Switchecs is a quirky chess variant where the entire board flips its orientation randomly after a certain number of moves, challenging players to adapt their strategies on the fly. Built with a simple web interface, it offers a fun twist on the classic game of chess.",
-      "duration": "Feb 2022 - Feb 2022"
+      "duration": "February 2022",
+      "github": "https://github.com/harryviennot/switchecs",
+      "overview": "Switchecs is an original online chess game where the board randomly flips, forcing players to constantly adapt their strategy.",
+      "context": "This project was born from a 24-hour Epitech Game Jam challenge. The subject was \"black and white\" and was open to any interpretation. Our group of four decided to make a twist on the most popular black and white game: chess. We wanted to create a game that was fun and challenging, and that would be easy to play.",
+      "app": {
+        "summary": "Players engage in an online two-player chess match where every few moves, the board flips orientation. This forces players to reassess their strategy from a new perspective. The game tracks move history and ensures all chess rules are properly enforced despite the orientation changes.",
+        "screenshots": [
+          {
+            "url": "/screenshots/switchecs-board.png",
+            "caption": "Game board in session"
+          },
+          {
+            "url": "/screenshots/switchecs-flip.png",
+            "caption": "Board flip animation"
+          },
+          {
+            "url": "/screenshots/switchecs-history.png",
+            "caption": "Move history on right"
+          }
+        ]
+      },
+      "design": {
+        "description": "As time was limited, we focused on the game mechanics and used an existing chessboard library. We wanted to keep the game simple and easy to play, so we didn't add too many features.",
+        "figma": null
+      },
+      "stack": {
+        "frontend": ["React", "JavaScript", "CSS Modules"],
+        "backend": ["Express", "Socket.io"],
+        "apis": [],
+        "libraries": ["chess.js", "react-chessboard"],
+        "tools": [],
+        "devops": [],
+        "ai": []
+      },
+      "architecture": {
+        "text": "The game follows a client-server architecture. The client is a React app that uses the chessboard library to display the game. The server is an Express app that handles the game logic and the Socket.io connections.",
+        "diagram": null
+      },
+      "challenges": [
+        "Syncing game state with orientation changes",
+        "Keeping interface intuitive despite visual flips",
+        "Understanding Fen notation and rewriting all chess logic"
+      ]
     }
   },
   "education": {
@@ -176,6 +335,7 @@
       "message": "The project you're looking for doesn't exist."
     },
     "backToProjects": "Back to Projects",
+    "overviewTitle": "The App",
     "techStackTitle": "Tech Stack",
     "descriptionTitle": "Description",
     "screenshotsTitle": "Screenshots",

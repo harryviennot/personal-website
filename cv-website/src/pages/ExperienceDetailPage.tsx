@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation, Trans } from "react-i18next";
 
@@ -23,6 +23,30 @@ interface ExperienceTools {
 const ExperienceDetailPage: React.FC = () => {
   const { experienceName } = useParams<{ experienceName: string }>();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Improved scroll behavior for smoother experience that centers the section
+  const scrollToSection = (sectionId: string) => {
+    navigate("/");
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "center", // Centers the element in the viewport
+        });
+      }
+    }, 300); // Increased delay for more reliable scrolling
+  };
+
+  const handleBackToExperience = () => {
+    scrollToSection("experience");
+  };
 
   if (!experienceName) {
     return (
@@ -34,12 +58,12 @@ const ExperienceDetailPage: React.FC = () => {
           <p className="mt-2 text-gray-600">
             {t("experienceDetailPage.notFound.message")}
           </p>
-          <Link
-            to="/#experience"
+          <button
+            onClick={handleBackToExperience}
             className="mt-6 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
           >
             {t("experienceDetailPage.backToExperience")}
-          </Link>
+          </button>
         </div>
       </div>
     );
@@ -62,12 +86,12 @@ const ExperienceDetailPage: React.FC = () => {
           <p className="mt-2 text-gray-600">
             {t("experienceDetailPage.notFound.message")}
           </p>
-          <Link
-            to="/#experience"
+          <button
+            onClick={handleBackToExperience}
             className="mt-6 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
           >
             {t("experienceDetailPage.backToExperience")}
-          </Link>
+          </button>
         </div>
       </div>
     );
@@ -148,9 +172,9 @@ const ExperienceDetailPage: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="bg-white p-8 rounded-xl shadow-sm"
         >
-          <Link
-            to="/#experience"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 mb-6"
+          <button
+            onClick={handleBackToExperience}
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 mb-6 cursor-pointer bg-transparent border-none"
           >
             <svg
               className="mr-1 w-4 h-4"
@@ -165,7 +189,7 @@ const ExperienceDetailPage: React.FC = () => {
               />
             </svg>
             {t("experienceDetailPage.backToExperience")}
-          </Link>
+          </button>
 
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{title}</h1>
           <h2 className="text-xl text-blue-600 mb-2">{company}</h2>
@@ -204,7 +228,7 @@ const ExperienceDetailPage: React.FC = () => {
                 {tools.map((tool, index) => (
                   <span
                     key={index}
-                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
                   >
                     {tool}
                   </span>
@@ -225,13 +249,6 @@ const ExperienceDetailPage: React.FC = () => {
               </ul>
             </div>
           )}
-
-          <Link
-            to="/#experience"
-            className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-          >
-            {t("experienceDetailPage.backToExperience")}
-          </Link>
         </motion.div>
       </div>
     </div>

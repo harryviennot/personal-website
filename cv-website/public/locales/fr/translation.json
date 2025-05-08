@@ -22,7 +22,7 @@
   },
   "about": {
     "title": "À propos de moi",
-    "description": "Je suis un étudiant français en ingénierie logicielle actuellement en échange à l’Université McGill, avec une solide formation à Epitech. Je m’intéresse à l’automatisation des systèmes, au DevOps, et à la création d’outils numériques à impact. J’aime travailler sur des projets stimulants et je crois en un code propre, efficace et bien conçu. J’ai toujours envie de collaborer et d’apprendre des autres."
+    "description": "Je suis un étudiant français en ingénierie logicielle actuellement en échange à l'Université McGill, avec une solide formation à Epitech. Je m'intéresse à l'automatisation des systèmes, au DevOps, et à la création d'outils numériques à impact. J'aime travailler sur des projets stimulants et je crois en un code propre, efficace et bien conçu. J'ai toujours envie de collaborer et d'apprendre des autres."
   },
   "experience": {
     "title": "Expériences professionnelles",
@@ -31,52 +31,52 @@
       "title": "Stagiaire DevOps",
       "company": "BPCE IT",
       "date": "Oct 2023 – Juin 2024",
-      "description": "Automatisation des pipelines CI/CD et déploiement d’infrastructure avec Kubernetes. Amélioration des outils internes et du monitoring des performances système.",
-      "fullDescription": "En tant que stagiaire DevOps chez BPCE IT à Toulouse, j’ai intégré l’équipe Guichet SI Établissements au sein de la Plateforme Privative. Mon rôle consistait à automatiser et standardiser les chaînes de déploiement pour des logiciels internes tels qu’Adequasys et UAS. J’ai contribué à la conception et à la mise en place de pipelines CI/CD, à l’orchestration des services via MyCloud, et à la maintenance de templates d’infrastructure. J’ai utilisé Jenkins, Bitbucket, Artifactory, XLR/XLD dans un environnement Agile avec des réunions d’équipe régulières.",
+      "description": "Automatisation des pipelines CI/CD et déploiement d'infrastructure avec Kubernetes. Amélioration des outils internes et du monitoring des performances système.",
+      "fullDescription": "En tant que stagiaire DevOps chez BPCE IT à Toulouse, j'ai intégré l'équipe Guichet SI Établissements au sein de la Plateforme Privative. Mon rôle consistait à automatiser et standardiser les chaînes de déploiement pour des logiciels internes tels qu'Adequasys et UAS. J'ai contribué à la conception et à la mise en place de pipelines CI/CD, à l'orchestration des services via MyCloud, et à la maintenance de templates d'infrastructure. J'ai utilisé Jenkins, Bitbucket, Artifactory, XLR/XLD dans un environnement Agile avec des réunions d'équipe régulières.",
       "responsibilities": [
-        "Automatisation de la mise en place d’environnements via MyCloud et Jenkins",
+        "Automatisation de la mise en place d'environnements via MyCloud et Jenkins",
         "Implémentation de templates réutilisables pour XLRelease et Jenkins",
         "Création et maintenance des dépôts Bitbucket et Jenkinsfiles",
         "Orchestration des flux CI/CD avec Jenkins, Artifactory et Bitbucket",
         "Participation à la transition Agile et aux réunions quotidiennes de coordination"
       ],
       "achievements": [
-        "Mise en place d’un pipeline de déploiement standardisé pour plus de 20 projets",
-        "Réduction du temps de configuration grâce à l’automatisation",
-        "Documentation complète des architectures de pipelines pour l’onboarding"
+        "Mise en place d'un pipeline de déploiement standardisé pour plus de 20 projets",
+        "Réduction du temps de configuration grâce à l'automatisation",
+        "Documentation complète des architectures de pipelines pour l'onboarding"
       ]
     },
     "strategin": {
       "title": "Stagiaire Développement Logiciel",
       "company": "Strateg.in",
       "date": "Août 2022 – Décembre 2022",
-      "description": "Développement de fonctionnalités full-stack pour des applications clients avec React et Node.js. Collaboration avec les équipes design et produit pour l’intégration d’interfaces responsives.",
-      "fullDescription": "Chez Strateg.in, une entreprise de transformation digitale pour PME, j’ai travaillé sur plusieurs projets web, ERP et une application mobile. J’ai développé des fonctionnalités côté frontend et backend, comme des tableaux de bord, un système de suivi de progression des utilisateurs, et des exports automatiques. J’ai également intégré des APIs, effectué des déploiements avec Docker et Kubernetes, et conçu des algorithmes de recommandation de cours.",
+      "description": "Développement de fonctionnalités full-stack pour des applications clients avec React et Node.js. Collaboration avec les équipes design et produit pour l'intégration d'interfaces responsives.",
+      "fullDescription": "Chez Strateg.in, une entreprise de transformation digitale pour PME, j'ai travaillé sur plusieurs projets web, ERP et une application mobile. J'ai développé des fonctionnalités côté frontend et backend, comme des tableaux de bord, un système de suivi de progression des utilisateurs, et des exports automatiques. J'ai également intégré des APIs, effectué des déploiements avec Docker et Kubernetes, et conçu des algorithmes de recommandation de cours.",
       "responsibilities": [
         "Correction de bugs et génération de fichiers PDF/Excel dans le projet 'La Méthode Citoyenne'",
         "Développement de fonctionnalités clés pour 'AEP Formation' (ERP, statuts des cours, algorithmes de recommandation)",
         "Création du dashboard utilisateur et redirection après connexion",
-        "Suivi de progression des utilisateurs via l’API et refonte du modèle de données",
-        "Amélioration de l’application mobile 'Car Co' (bugs, annulations d’évènements, etc.)"
+        "Suivi de progression des utilisateurs via l'API et refonte du modèle de données",
+        "Amélioration de l'application mobile 'Car Co' (bugs, annulations d'évènements, etc.)"
       ],
       "achievements": [
-        "Création d’un algorithme de recommandation basé sur l’historique utilisateur",
-        "Lead sur la partie dashboard et ERP d’AEP Formation",
+        "Création d'un algorithme de recommandation basé sur l'historique utilisateur",
+        "Lead sur la partie dashboard et ERP d'AEP Formation",
         "Adaptation rapide à différents stacks techniques (React, Next.js, mobile)",
-        "Transition réussie de l’apprentissage académique vers un workflow professionnel"
+        "Transition réussie de l'apprentissage académique vers un workflow professionnel"
       ]
     },
     "airbusHackathon": {
       "title": "Hackathon",
       "company": "Airbus Innovation Week",
       "date": "Mars 2023",
-      "description": "Participation à un hackathon de 48h sur l’aviation durable. Développement d’un prototype pour optimiser les trajets de vol et réduire les émissions de carbone.",
-      "fullDescription": "J’ai participé à l’Airbus Innovation Week, un hackathon axé sur les solutions pour une aviation durable. En équipe de quatre, nous avons conçu un prototype d’application utilisant le machine learning pour optimiser les routes aériennes afin de réduire la consommation de carburant.",
+      "description": "Participation à un hackathon de 48h sur l'aviation durable. Développement d'un prototype pour optimiser les trajets de vol et réduire les émissions de carbone.",
+      "fullDescription": "J'ai participé à l'Airbus Innovation Week, un hackathon axé sur les solutions pour une aviation durable. En équipe de quatre, nous avons conçu un prototype d'application utilisant le machine learning pour optimiser les routes aériennes afin de réduire la consommation de carburant.",
       "responsibilities": [
         "Responsable du développement frontend du prototype",
-        "Intégration d’APIs de données de vol et de systèmes cartographiques",
+        "Intégration d'APIs de données de vol et de systèmes cartographiques",
         "Présentation du projet devant le jury Airbus",
-        "Collaboration sur le développement de l’algorithme de calcul de trajectoire"
+        "Collaboration sur le développement de l'algorithme de calcul de trajectoire"
       ],
       "achievements": [
         "Prix de la solution la plus innovante",
@@ -89,27 +89,191 @@
     "title": "Projets",
     "mirage": {
       "name": "Mirage",
-      "description": "Outil de visualisation d'infrastructure cloud générant des diagrammes interactifs à partir de templates Terraform ou CloudFormation.",
-      "fullDescription": "Mirage est un outil destiné aux développeurs permettant de générer automatiquement des diagrammes visuels de l'infrastructure cloud définie via du code (IaC) comme Terraform ou CloudFormation. Il analyse les fichiers, détecte les relations entre ressources et produit des visualisations interactives pour mieux comprendre les architectures cloud complexes. Mirage supporte AWS, Azure et GCP.",
-      "duration": "Mar 2022 - Août 2022"
+      "duration": "Mars 2024 – Aujourd'hui",
+      "github": null,
+      "overview": "Mirage est une application SaaS permettant aux utilisateurs de déployer, configurer et exploiter des agents IA contextuels dans des espaces de travail personnalisés. La plateforme centralise la gestion des services connectés, des fichiers, et des modèles pour optimiser la productivité des équipes.",
+      "context": "Ce projet a été initié pour résoudre un problème récurrent dans les entreprises : le cloisonnement de l'information et la difficulté d'exploiter l'IA de manière intégrée. L'idée était de créer une plateforme modulaire qui centralise la configuration des agents IA, les connecte à des services métiers, et contextualise les données internes. Audience: Administrateurs techniques, équipes de support client, développeurs internes.",
+      "app": {
+        "summary": "Les utilisateurs peuvent créer des espaces isolés pour déployer des agents IA configurés avec du contexte de fichiers et des connexions aux services. Les administrateurs peuvent gérer les services (Slack, Jira, etc.) via OAuth, importer des documents pour le RAG, et configurer des modèles IA par espace.",
+        "screenshots": [
+          {
+            "url": "/screenshots/mirage-dashboard.png",
+            "caption": "Dashboard super admin – Vue cartes de services"
+          },
+          {
+            "url": "/screenshots/mirage-space-model.png",
+            "caption": "Page d'un espace – Onglet Modèle pour configuration RAG"
+          },
+          {
+            "url": "/screenshots/mirage-service-form.png",
+            "caption": "Création d'un service – Formulaire en trois étapes"
+          }
+        ]
+      },
+      "design": {
+        "description": "Interface épurée, type dashboard SaaS avec navigation fluide et réactive entre les pages et expérience utilisateur cohérente pour les super admin et les administrateurs d'espace. J'ai conçu les maquettes sur Figma en suivant une structure modulaire. Chaque page est découpée en composants: cartes de service, formulaires multi-sections, pages d'espace avec onglets.",
+        "figma": null
+      },
+      "stack": {
+        "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        "backend": ["Node.js", "FastAPI", "Redis", "PostgreSQL", "Prisma"],
+        "devops": ["GitHub Actions", "Docker"],
+        "ai": [
+          "OpenAI API",
+          "RAG (Retrieval-Augmented Generation)",
+          "Langchain (à venir)"
+        ],
+        "apis": [],
+        "libraries": [],
+        "tools": []
+      },
+      "architecture": {
+        "text": "Mirage est organisé en multi-tenant avec un système d'espaces isolés. Chaque espace peut gérer ses fichiers, ses modèles, et ses connexions à des services externes via des connecteurs OAuth2. Les requêtes utilisateur sont traitées côté serveur, enrichies via un moteur RAG basé sur les fichiers importés, puis envoyées à l'API d'OpenAI. Les fichiers sont segmentés et vectorisés à l'avance.",
+        "diagram": null
+      },
+      "challenges": [
+        "Concevoir une interface assez flexible pour gérer différents types de services",
+        "Intégrer une configuration dynamique d'authentification (OAuth2, tokens statiques...)",
+        "Optimiser la vectorisation et la récupération contextuelle pour le système RAG"
+      ]
     },
-    "movieMatch": {
+    "moviematch": {
       "name": "Movie Match",
-      "description": "App React Native permettant à des amis de matcher sur des films et créer des watchlists collaboratives avec chat intégré.",
-      "fullDescription": "Movie Match est une application mobile développée avec React Native permettant aux utilisateurs de swiper sur des films. Lorsqu’un match est établi entre amis, le film est ajouté à une liste collaborative. L’app inclut un chat en temps réel et utilise l’API TheMovieDB pour récupérer les informations de films.",
-      "duration": "Sept 2022 - Déc 2022"
+      "duration": "Septembre 2022 – Aujourd'hui",
+      "github": null,
+      "overview": "Movie Match est une application mobile conçue pour aider les amis à choisir un film à regarder ensemble. Elle combine un système de swipe inspiré des applications de rencontre avec des listes de films collaboratives.",
+      "context": "Ce projet personnel a été développé pour explorer React Native, les architectures client-serveur mobiles, et l'intégration d'API externes. L'idée est née de la frustration de devoir choisir un film à plusieurs via des discussions interminables. Audience: Groupes d'amis, couples ou colocataires cherchant à découvrir un film ensemble.",
+      "app": {
+        "summary": "L'utilisateur démarre un lobby en choisissant les plateformes de streaming disponibles, et d'autres peuvent rejoindre via un code. Une fois connectés, l'administrateur lance la partie et les utilisateurs sélectionnent leurs genres préférés. Les films sont recommandés selon le mix de genres le plus compatible. Les films swipés à droite sont ajoutés à une playlist visible par tous.",
+        "screenshots": [
+          {
+            "url": "/screenshots/movie-match-lobby.png",
+            "caption": "Lobby"
+          }
+        ]
+      },
+      "design": {
+        "description": "J'ai voulu une ambiance ludique inspirée du cinéma. J'ai choisi un thème sombre et une police type jeu. La carte de film montre les informations clés en un coup d'œil, avec des détails comme le synopsis, les plateformes, et les liens IMDb au verso.",
+        "figma": "https://www.figma.com/design/FemeYv6ANlWLGDvwfXAs7s/Movie-Match?node-id=0-1&t=Biku71eBnypPWQaR-1"
+      },
+      "stack": {
+        "frontend": ["React Native", "Expo", "TypeScript", "React Navigation"],
+        "backend": ["Node.js", "Express", "Firebase", "MongoDB"],
+        "apis": [
+          "Streaming Availability (RapidAPI)",
+          "TheMovieDatabase",
+          "OMDB"
+        ],
+        "libraries": [],
+        "devops": [],
+        "tools": ["Figma", "Postman", "Google Cloud Platform"],
+        "ai": []
+      },
+      "architecture": {
+        "text": "L'application utilise une architecture client-serveur. Le frontend mobile communique avec un backend Express via une API REST pour les données persistantes et via Firebase pour le chat en temps réel. Les utilisateurs se connectent à une session, les films sont récupérés depuis TheMovieDB puis affichés un par un. Chaque swipe est stocké côté serveur.",
+        "diagram": "/diagrams/movie-match.png"
+      },
+      "challenges": [
+        "Synchroniser en temps réel les données de swipes et de matches",
+        "Gérer les identifiants de sessions multi-utilisateurs",
+        "Assurer la fluidité du chat sur réseaux mobiles instables"
+      ]
     },
     "botbutler": {
       "name": "BotButler",
-      "description": "Plateforme d’assistant IA connectée à Slack et Jira pour automatiser les workflows internes avec ingestion de fichiers.",
-      "fullDescription": "BotButler est une plateforme d’assistant intelligent intégrée à Slack, Jira et d’autres outils d’entreprise pour automatiser des tâches courantes. Elle utilise le NLP pour interpréter les requêtes des utilisateurs et peut analyser les fichiers internes pour générer des réponses contextuelles ou exécuter des actions.",
-      "duration": "Jan 2023 - Aujourd’hui"
+      "duration": "Janvier 2023 – Présent",
+      "github": null,
+      "overview": "BotButler est une plateforme d'assistants IA capable de se connecter aux outils internes des entreprises (Slack, Jira, Notion, etc.) pour automatiser les workflows, fournir des réponses contextuelles et agir de manière proactive.",
+      "context": "L'outil a été conçu pour répondre aux besoins des entreprises souhaitant rendre leurs données internes exploitables par une IA, tout en conservant une maîtrise fine des permissions et des connexions entre outils. Il s'inscrit dans une logique de productivité augmentée par l'IA dans des environnements distribués. Audience: PMEs, équipes produit, support, ou toute entreprise utilisant plusieurs outils SaaS.",
+      "app": {
+        "summary": "Les administrateurs peuvent configurer des agents IA qui se connectent aux services via OAuth, ingèrent des documents d'entreprise pour le contexte, et définissent des actions personnalisées. Les utilisateurs interagissent avec les agents via Slack ou des interfaces web pour obtenir des réponses instantanées sur la documentation interne ou déclencher des actions de workflow.",
+        "screenshots": [
+          {
+            "url": "/screenshots/botbutler-agent-view.png",
+            "caption": "Vue d'un agent IA – statut des connexions et logs"
+          },
+          {
+            "url": "/screenshots/botbutler-action-config.png",
+            "caption": "Configuration des actions personnalisées pour Jira et Slack"
+          },
+          {
+            "url": "/screenshots/botbutler-context-editor.png",
+            "caption": "Éditeur de contexte – ingestion de fichiers et métadonnées"
+          }
+        ]
+      },
+      "design": {
+        "description": "Interface minimaliste où l'administrateur peut gérer chaque agent IA, avec mise en avant des connexions actives avec les services et retours visuels en temps réel sur les requêtes IA. J'ai d'abord défini l'architecture conversationnelle et les cas d'usage types (répondre à une question, déclencher une action, restituer un fichier).",
+        "figma": null
+      },
+      "stack": {
+        "frontend": ["React", "TypeScript", "Tailwind CSS"],
+        "backend": ["Node.js", "Express", "PostgreSQL"],
+        "ai": [
+          "OpenAI API",
+          "Langchain (à venir)",
+          "Vector Stores (Pinecone, Redis)"
+        ],
+        "apis": ["Slack API", "Jira REST API", "OAuth 2.0", "Webhook Handlers"],
+        "libraries": [],
+        "devops": [],
+        "tools": []
+      },
+      "architecture": {
+        "text": "Chaque agent IA est déployé dans un environnement isolé avec ses propres services connectés, fichiers ingérés, et logs. Le système central gère l'authentification OAuth, la gestion des endpoints, et la synchronisation des vecteurs de contexte. Les requêtes utilisateurs passent par un moteur de parsing, une couche de récupération sémantique, puis vers l'IA.",
+        "diagram": null
+      },
+      "challenges": [
+        "Créer une logique de permissions fine entre les agents, les utilisateurs, et les services",
+        "Gérer des réponses contextuelles cohérentes même avec des documents longs ou ambigus",
+        "Assurer la sécurité des connexions OAuth et des actions déclenchées automatiquement"
+      ]
     },
     "switchecs": {
       "name": "Switchecs",
-      "description": "Jeu d’échecs où l’échiquier pivote aléatoirement",
-      "fullDescription": "Switchecs est une variante amusante du jeu d’échecs : l’échiquier change d’orientation de manière aléatoire après un certain nombre de coups. Développé avec une interface web simple, il propose une nouvelle approche stratégique du jeu classique.",
-      "duration": "Fév 2022 - Fév 2022"
+      "duration": "Février 2022 – Février 2022",
+      "github": "https://github.com/harryviennot/switchecs",
+      "overview": "Switchecs est un jeu d'échecs en ligne original dans lequel l'échiquier change d'orientation de façon aléatoire, forçant les joueurs à adapter leur stratégie en permanence.",
+      "context": "Projet personnel né de l'envie de réinventer un jeu classique avec une mécanique surprenante. Switchecs est aussi un terrain d'expérimentation pour tester la gestion d'états complexes, la logique de jeu au tour par tour, et l'impact des animations visuelles sur la perception du jeu. Audience: Joueurs d'échecs, amateurs de jeux web ou fans de jeux de société revisités.",
+      "app": {
+        "summary": "Les joueurs participent à une partie d'échecs locale à deux où, tous les quelques coups, le plateau change d'orientation. Cela force les joueurs à réévaluer leur stratégie depuis une nouvelle perspective. Le jeu suit l'historique des mouvements et garantit que toutes les règles des échecs sont correctement appliquées malgré les changements d'orientation.",
+        "screenshots": [
+          {
+            "url": "/screenshots/switchecs-board.png",
+            "caption": "Plateau d'échecs en cours de partie"
+          },
+          {
+            "url": "/screenshots/switchecs-flip.png",
+            "caption": "Animation de retournement du plateau"
+          },
+          {
+            "url": "/screenshots/switchecs-history.png",
+            "caption": "Historique des coups à droite de l'échiquier"
+          }
+        ]
+      },
+      "design": {
+        "description": "Reproduire un plateau d'échecs fonctionnel avec pièces interactives, ajouter des effets visuels fluides lors des inversions, et offrir une interface responsive et agréable. Le design a été pensé autour de la simplicité: l'utilisateur joue au tour par tour contre un autre joueur local, et doit s'adapter aux retournements du plateau.",
+        "figma": null
+      },
+      "stack": {
+        "frontend": ["React", "JavaScript", "CSS Modules"],
+        "backend": [],
+        "apis": [],
+        "libraries": ["chess.js", "react-chessboard"],
+        "tools": ["Vite", "ESLint", "Prettier"],
+        "devops": [],
+        "ai": []
+      },
+      "architecture": {
+        "text": "Application purement front-end en React, gérant l'état de la partie localement. Le moteur de jeu est géré par la librairie chess.js, avec des hooks personnalisés pour suivre l'historique, détecter les coups légaux et déclencher les inversions aléatoires. À chaque tour, un compteur déclenche un 'flip' visuel et logique à une fréquence définie.",
+        "diagram": null
+      },
+      "challenges": [
+        "Synchroniser l'état du jeu avec les changements de perspective",
+        "Maintenir l'intuitivité de l'interface malgré les changements visuels",
+        "Gérer les effets CSS sans perturber les événements DOM sur les pièces"
+      ]
     }
   },
   "education": {
@@ -118,13 +282,13 @@
       "institution": "Université McGill",
       "degree": "Certificat en Management",
       "year": "2024–2025",
-      "description": "Année d’échange axée sur la gestion stratégique et les affaires internationales."
+      "description": "Année d'échange axée sur la gestion stratégique et les affaires internationales."
     },
     "epitech": {
       "institution": "Epitech – European Institute of Technology",
       "degree": "Master en Ingénierie Logicielle",
       "year": "2021–2026",
-      "description": "Apprentissage par projets avec un focus sur la collaboration, les algorithmes, les systèmes et l’architecture logicielle."
+      "description": "Apprentissage par projets avec un focus sur la collaboration, les algorithmes, les systèmes et l'architecture logicielle."
     }
   },
   "extras": {
@@ -132,7 +296,7 @@
     "languages": {
       "title": "Français (natif), Anglais (courant), Espagnol (intermédiaire)",
       "category": "Langues",
-      "description": "À l’aise dans des environnements multilingues"
+      "description": "À l'aise dans des environnements multilingues"
     },
     "certification": {
       "title": "AWS Certified Developer Associate",
@@ -162,7 +326,7 @@
   "experienceDetailPage": {
     "notFound": {
       "title": "Expérience introuvable",
-      "message": "L’expérience que vous recherchez n’existe pas."
+      "message": "L'expérience que vous recherchez n'existe pas."
     },
     "backToExperience": "Retour aux expériences",
     "overviewTitle": "Présentation",
@@ -173,12 +337,14 @@
   "projectDetailPage": {
     "notFound": {
       "title": "Projet introuvable",
-      "message": "Le projet que vous recherchez n’existe pas."
+      "message": "Le projet que vous recherchez n'existe pas."
     },
     "backToProjects": "Retour aux projets",
+    "overviewTitle": "L'Application",
+
     "techStackTitle": "Technologies",
     "descriptionTitle": "Description",
-    "screenshotsTitle": "Captures d’écran",
+    "screenshotsTitle": "Captures d'écran",
     "screenshotAltText": "Capture {{number}} du projet {{projectName}}",
     "linksTitle": "Liens",
     "viewSourceGithub": "Voir le code sur GitHub"
