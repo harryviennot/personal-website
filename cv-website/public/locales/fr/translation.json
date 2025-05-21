@@ -32,56 +32,296 @@
       "company": "BPCE IT",
       "date": "Oct 2023 – Juin 2024",
       "description": "Automatisation des pipelines CI/CD et déploiement d'infrastructure avec Kubernetes. Amélioration des outils internes et du monitoring des performances système.",
-      "fullDescription": "En tant que stagiaire DevOps chez BPCE IT à Toulouse, j'ai intégré l'équipe Guichet SI Établissements au sein de la Plateforme Privative. Mon rôle consistait à automatiser et standardiser les chaînes de déploiement pour des logiciels internes tels qu'Adequasys et UAS. J'ai contribué à la conception et à la mise en place de pipelines CI/CD, à l'orchestration des services via MyCloud, et à la maintenance de templates d'infrastructure. J'ai utilisé Jenkins, Bitbucket, Artifactory, XLR/XLD dans un environnement Agile avec des réunions d'équipe régulières.",
-      "responsibilities": [
-        "Automatisation de la mise en place d'environnements via MyCloud et Jenkins",
-        "Implémentation de templates réutilisables pour XLRelease et Jenkins",
-        "Création et maintenance des dépôts Bitbucket et Jenkinsfiles",
-        "Orchestration des flux CI/CD avec Jenkins, Artifactory et Bitbucket",
-        "Participation à la transition Agile et aux réunions quotidiennes de coordination"
-      ],
-      "achievements": [
-        "Mise en place d'un pipeline de déploiement standardisé pour plus de 20 projets",
-        "Réduction du temps de configuration grâce à l'automatisation",
-        "Documentation complète des architectures de pipelines pour l'onboarding"
+      "context": "J’ai intégré BPCE IT, le pôle d’infogérance du groupe bancaire BPCE, en tant que stagiaire DevOps au sein de l’équipe GPR - Guichet SI Établissements. Cette équipe agit comme interface entre les banques du groupe et les équipes techniques internes, avec pour mission de simplifier et d’accélérer le déploiement d’environnements applicatifs via des pratiques DevOps.",
+      "projects": [
+        {
+          "name": "Automatisation des déploiements Adequasys (HR SaaS interne)",
+          "context": "Adequasys est un logiciel RH modulaire utilisé par de nombreuses entités du groupe BPCE. Chaque banque dispose de sa propre instance, nécessitant des mises à jour régulières (modules, correctifs, versions). Jusqu’alors, chaque projet était configuré manuellement, ce qui rendait les déploiements lents, sujets à erreur, et difficilement maintenables.",
+          "objective": "Le but de ce projet était de créer un pipeline standardisé permettant d’automatiser la création et la mise à jour des chaînes de déploiement de plus de 20 projets Adequasys, en réduisant les erreurs manuelles et les temps de configuration.",
+          "contributions": [
+            "Création d’un template de déploiement générique centralisé (XLRelease) utilisable pour tous les projets.",
+            "Développement de pipelines Jenkins réutilisables pour provisionner les services nécessaires (Jenkins, Bitbucket, XLR/XLD, Artifactory, CyberArk).",
+            "Standardisation des dossiers projets et déploiements pour garantir la cohérence entre les équipes.",
+            "Documentation détaillée pour faciliter la prise en main par d'autres équipes."
+          ],
+          "tools": [
+            {
+              "name": "XLRelease/XLDeploy",
+              "reason": "pour orchestrer les déploiements."
+            },
+            {
+              "name": "Jenkins",
+              "reason": "pour automatiser les déploiements."
+            },
+            {
+              "name": "Bitbucket",
+              "reason": "pour stocker les templates de pipelines."
+            },
+            {
+              "name": "Artifactory",
+              "reason": "pour stocker les fichiers binaires et modèles de référence."
+            },
+            {
+              "name": "MyCloud",
+              "reason": "pour créer les environnements requis à la volée."
+            },
+            {
+              "name": "CyberArk",
+              "reason": "pour la gestion sécurisée des secrets."
+            },
+            {
+              "name": "Confluence",
+              "reason": "pour la documentation des pipelines."
+            }
+          ],
+          "methodImage": "adequasys",
+          "method": "Lorsqu'on exécute le script de génération pour un projet Adequasys, celui-ci commence par provisionner automatiquement tous les services nécessaires (Bitbucket, Jenkins, XLRelease, etc.) via l'API de MyCloud, si ceux-ci n'existent pas déjà.\n\nUne fois les services disponibles, ils sont initialisés, puis un script de remplissage et dispatch entre en action. Ce script va chercher les templates de référence pour chaque outil (dépôt, pipeline, release), les personnalise dynamiquement avec les informations du projet, puis les déploie automatiquement :\n- Le template Jenkinsfile est injecté dans Bitbucket\n- Un nouveau dossier Jenkins est créé\n- Un template XLRelease prêt à l'emploi est copié dans le bon répertoire\n\nSi le projet existe déjà, le script saute les étapes de provisionnement et se contente de mettre à jour les services existants avec les dernières versions des templates.\n\n🔧 Résultat : en un seul déclenchement, un nouvel environnement complet est prêt à être utilisé, sans intervention manuelle.",
+          "results": [
+            "Forte réduction du temps de mise en place d’un nouveau projet (de plusieurs jours à quelques minutes).",
+            "Diminution significative des erreurs humaines grâce à l’automatisation.",
+            "Cohérence et standardisation des pipelines entre les entités."
+          ],
+          "challenges": [
+            "Rendre la solution générique tout en laissant la possibilité de surcharger certains projets.",
+            "Tester efficacement les pipelines dans un environnement déjà en production"
+          ]
+        },
+        {
+          "name": "Automatisation des déploiements UAS (Usine à Sites)",
+          "context": "Chaque entité du groupe BPCE (Banques Populaires, Caisses d’Épargne, filiales) gérait auparavant son propre site vitrine WordPress, entraînant une hétérogénéité graphique, des coûts élevés et des niveaux de sécurité variables. L’Usine à Sites (UAS) a été lancée en 2023 pour centraliser tous ces sites sur une plateforme unique, sécurisée et cohérente, développée et maintenue par BPCE IT.",
+          "objective": "Héberger et gérer jusqu’à 300 sites WordPress via une infrastructure mutualisée, avec des environnements adaptés à chaque entité tout en garantissant sécurité, standardisation et facilité de maintenance.",
+          "contributions": [
+            "Finalisation de l’architecture d’hébergement en 3 couches (Présentation / Application / Données)",
+            "Déploiement et configuration des environnements pour chaque nouveau site (dev, préprod, prod)",
+            "Automatisation des mises à jour Nginx avec un pipeline XLRelease → Jenkins → XLDeploy",
+            "Création d’un script CLI pour mettre à jour efficacement les fichiers Kubernetes sur plusieurs sites à la fois",
+            "Validation des Pull Requests sur le dépôt Kubernetes de la plateforme",
+            "Participation à la mise en ligne du site principal de BPCE, partenaire officiel des JO 2024",
+            "Documentation complète du projet pour faciliter sa reprise"
+          ],
+          "tools": [
+            {
+              "name": "MyCloud",
+              "reason": "pour provisionner automatiquement les ressources nécessaires (load balancers, serveurs Nginx, clusters SQL...)."
+            },
+            {
+              "name": "Kubernetes",
+              "reason": "pour gérer le déploiement et l’orchestration des containers applicatifs."
+            },
+            {
+              "name": "OpenShift",
+              "reason": "pour offrir une couche PaaS sécurisée et stable au-dessus de Kubernetes."
+            },
+            {
+              "name": "Bitbucket",
+              "reason": "pour versionner les fichiers de configuration Kubernetes et Nginx."
+            },
+            {
+              "name": "XLRelease/XLDeploy",
+              "reason": "pour orchestrer et exécuter automatiquement les déploiements de configuration (notamment Nginx)."
+            },
+            {
+              "name": "Jenkins",
+              "reason": "pour packager les fichiers et déclencher les actions de déploiement."
+            },
+            {
+              "name": "Artifactory",
+              "reason": "pour stocker les artefacts de déploiement (packages Nginx, scripts...)."
+            },
+            {
+              "name": "MySQL InnoDB Cluster",
+              "reason": "pour héberger les données des sites avec une haute disponibilité par type d'entité."
+            },
+            {
+              "name": "Nginx",
+              "reason": "pour gérer les requêtes HTTP et rediriger les utilisateurs vers le bon site."
+            }
+          ],
+          "method": null,
+          "results": [
+            "Réduction des coûts de 50 % par site",
+            "Amélioration de la sécurité et de la stabilité",
+            "Standardisation des environnements et des processus de déploiement"
+          ],
+          "challenges": [
+            "Projet encore en phase de structuration à mon arrivée : beaucoup d’inconnues et de blocages techniques initiaux",
+            "Nécessité de garantir la haute disponibilité et la robustesse, notamment pour le site principal BPCE",
+            "Complexité des configurations Kubernetes et erreurs fréquentes sans validation rigoureuse",
+            "Coordination avec plusieurs équipes et délais très serrés"
+          ]
+        }
       ]
     },
     "strategin": {
-      "title": "Stagiaire Développement Logiciel",
+      "title": "Développeur Fullstack Stagiaire",
       "company": "Strateg.in",
       "date": "Août 2022 – Décembre 2022",
       "description": "Développement de fonctionnalités full-stack pour des applications clients avec React et Node.js. Collaboration avec les équipes design et produit pour l'intégration d'interfaces responsives.",
-      "fullDescription": "Chez Strateg.in, une entreprise de transformation digitale pour PME, j'ai travaillé sur plusieurs projets web, ERP et une application mobile. J'ai développé des fonctionnalités côté frontend et backend, comme des tableaux de bord, un système de suivi de progression des utilisateurs, et des exports automatiques. J'ai également intégré des APIs, effectué des déploiements avec Docker et Kubernetes, et conçu des algorithmes de recommandation de cours.",
-      "responsibilities": [
-        "Correction de bugs et génération de fichiers PDF/Excel dans le projet 'La Méthode Citoyenne'",
-        "Développement de fonctionnalités clés pour 'AEP Formation' (ERP, statuts des cours, algorithmes de recommandation)",
-        "Création du dashboard utilisateur et redirection après connexion",
-        "Suivi de progression des utilisateurs via l'API et refonte du modèle de données",
-        "Amélioration de l'application mobile 'Car Co' (bugs, annulations d'évènements, etc.)"
-      ],
-      "achievements": [
-        "Création d'un algorithme de recommandation basé sur l'historique utilisateur",
-        "Lead sur la partie dashboard et ERP d'AEP Formation",
-        "Adaptation rapide à différents stacks techniques (React, Next.js, mobile)",
-        "Transition réussie de l'apprentissage académique vers un workflow professionnel"
+      "fullDescription": "J’ai intégré Strateg.in, une PME toulousaine spécialisée dans le développement logiciel sur mesure pour les entreprises. L’entreprise accompagne des PME dans leur transformation numérique en créant des solutions adaptées à leurs besoins métiers. Durant ce stage, j’ai été intégré comme membre à part entière de l’équipe de développement et j’ai contribué à toutes les phases de développement.",
+      "projects": [
+        {
+          "name": "AEP Formation (plateforme e-learning + ERP)",
+          "context": "AEP Formation est une plateforme de formation en ligne complète, composée d’un site web pour les utilisateurs et d’un ERP pour les formateurs et administrateurs. Le projet était encore en début de développement à mon arrivée.",
+          "objective": "Développer des fonctionnalités front-end et back-end clés pour gérer les formations, suivre la progression des utilisateurs, proposer des recommandations personnalisées et faciliter la création de contenus pédagogiques.",
+          "contributions": [
+            "Développement du tableau de bord utilisateur avec affichage des formations passées, en cours et à venir.",
+            "Conception d’un algorithme de recommandation basé sur l’historique de formation et les catégories les plus suivies.",
+            "Mise en place du système de progression utilisateur selon le type de chapitre (vidéo, texte, devoirs, etc.).",
+            "Implémentation du système de validation multi-statut des cours dans l’ERP.",
+            "Création d’un formulaire intelligent pour les nouveaux utilisateurs afin de leur recommander des parcours adaptés."
+          ],
+          "tools": [
+            {
+              "name": "React / Next.js",
+              "reason": "pour le développement de l’interface utilisateur (APP et ERP)."
+            },
+            {
+              "name": "Node.js",
+              "reason": "pour la logique API et la gestion des données utilisateur."
+            },
+            {
+              "name": "GitLab",
+              "reason": "pour la gestion du code source et l’intégration continue."
+            },
+            {
+              "name": "ClickUp",
+              "reason": "pour la gestion des sprints et le suivi des tâches."
+            }
+          ],
+          "method": "Travail en méthode agile avec sprints courts, daily stand-ups, et validation client hebdomadaire. Utilisation d’algorithmes simples pour les suggestions de formation, et d’une base de données enrichie pour suivre la progression utilisateur.",
+          "results": [
+            "Amélioration de l’expérience utilisateur sur la plateforme avec des recommandations pertinentes.",
+            "Mise en place d’un système de progression fiable et modulaire.",
+            "Participation active à toutes les couches de la plateforme, de l’ERP à l’app publique."
+          ],
+          "challenges": [
+            "Technologies différentes des autres projets de l’entreprise (Next.js, API distincte).",
+            "Mise en œuvre d’algorithmes de suggestion et de détection de progression multi-chapitres.",
+            "Autonomie requise sur un projet en cours de construction sans composants réutilisables."
+          ]
+        },
+        {
+          "name": "La Méthode Citoyenne",
+          "context": "La Méthode Citoyenne est un logiciel de gestion de projets civiques. Le projet était en phase de maintenance à mon arrivée.",
+          "objective": "Corriger les bugs identifiés par le client et améliorer les fonctionnalités de génération de fichiers pour la restitution des données projet.",
+          "contributions": [
+            "Correction des exports PDF : insertion de champs manquants, ajustement des tableaux et ajout de graphiques.",
+            "Développement d’un système de comparaison pour Excel mettant en évidence les modifications apportées aux projets.",
+            "Refactorisation de certains composants pour améliorer la stabilité."
+          ],
+          "tools": [
+            {
+              "name": "React",
+              "reason": "pour le front-end de l’application."
+            },
+            {
+              "name": "Node.js",
+              "reason": "pour les traitements backend et génération de fichiers."
+            },
+            {
+              "name": "GitLab",
+              "reason": "pour la gestion du code et des merge requests."
+            }
+          ],
+          "method": "Travail individuel basé sur une liste de bugs fournie par le client. Tests manuels répétés pour valider les exports, avec itérations régulières. Intégration dans un projet existant avec architecture API + APP.",
+          "results": [
+            "Amélioration significative de la qualité des exports livrés au client.",
+            "Réduction du nombre de bugs signalés après mise en production.",
+            "Première expérience concrète de maintenance logicielle sur un projet client réel."
+          ],
+          "challenges": [
+            "Manque d’expérience initiale avec la génération de fichiers complexes (PDF/Excel).",
+            "Compréhension rapide du code existant sans documentation formelle."
+          ]
+        },
+        {
+          "name": "Car Co (application mobile React Native)",
+          "context": "Application mobile destinée aux passionnés d’automobile, permettant de partager ses véhicules, participer à des événements et interagir avec une communauté.",
+          "objective": "Corriger les bugs identifiés par les utilisateurs et développer de petites fonctionnalités pour améliorer l’expérience mobile.",
+          "contributions": [
+            "Correction des bugs liés à l'envoi de mails via SendInBlue (données incomplètes).",
+            "Ajout de la fonctionnalité 'pull to refresh'.",
+            "Affichage conditionnel de messages en cas d’absence de contenu (véhicules, événements).",
+            "Ajout de la possibilité d’annuler un événement."
+          ],
+          "tools": [
+            {
+              "name": "React Native",
+              "reason": "pour le développement de l’application mobile."
+            },
+            {
+              "name": "SendInBlue API",
+              "reason": "pour l’envoi d’e-mails transactionnels."
+            },
+            {
+              "name": "GitLab",
+              "reason": "pour la gestion des versions et du code collaboratif."
+            }
+          ],
+          "method": "Travail en autonomie avec relecture de code, test des bugs, et échanges réguliers avec les designers et chefs de projet. Suivi des tâches dans ClickUp, corrections rapides intégrées au cycle CI/CD de l’app.",
+          "results": [
+            "Résolution de plusieurs bugs critiques signalés par les testeurs.",
+            "Découverte et prise en main de React Native.",
+            "Première expérience sur application mobile grand public."
+          ],
+          "challenges": [
+            "Découverte d’un nouveau framework (React Native) en contexte professionnel.",
+            "Résolution de bugs dans une application existante avec peu de documentation."
+          ]
+        }
       ]
     },
     "airbusHackathon": {
       "title": "Hackathon",
       "company": "Airbus Innovation Week",
       "date": "Mars 2023",
-      "description": "Participation à un hackathon de 48h sur l'aviation durable. Développement d'un prototype pour optimiser les trajets de vol et réduire les émissions de carbone.",
-      "fullDescription": "J'ai participé à l'Airbus Innovation Week, un hackathon axé sur les solutions pour une aviation durable. En équipe de quatre, nous avons conçu un prototype d'application utilisant le machine learning pour optimiser les routes aériennes afin de réduire la consommation de carburant.",
-      "responsibilities": [
-        "Responsable du développement frontend du prototype",
-        "Intégration d'APIs de données de vol et de systèmes cartographiques",
-        "Présentation du projet devant le jury Airbus",
-        "Collaboration sur le développement de l'algorithme de calcul de trajectoire"
-      ],
+      "link": "https://www.epitech.eu/2023/07/03/hackathon-dairbus-des-tek2-toulousains-repondent-au-defi-lance-par-le-geant-europeen-de-laerospatiale/",
+      "github": "https://github.com/harryviennot/supplier-mapping",
+      "description": "Participation à un hackathon de 48h organisé par Airbus autour de la thématique OSINT (Open Source Intelligence) appliquée à la gestion des fournisseurs.",
+      "context": "Dans le cadre de l’Airbus Innovation Week, Airbus a organisé un hackathon de 48h avec Epitech Toulouse. Le défi : utiliser des données publiques disponibles sur le web pour améliorer la veille et la gestion des risques fournisseurs. Deux thématiques principales étaient proposées : reconstituer les chaînes d’approvisionnement et détecter des signaux faibles comme les atteintes à l’environnement ou les violations des droits du travail.",
+      "challenge": "Notre équipe à été donné la problématique de détection automatique d’alertes liées aux fournisseurs critiques d’Airbus à partir de sources ouvertes. L’objectif était de proposer une solution capable de remonter des informations pertinentes à partir d’articles, rapports ou données géographiques, et de visualiser ces risques de manière claire.",
+      "solution": {
+        "summary": "Nous avons développé un prototype d’outil de visualisation et d’analyse des risques fournisseurs à partir de données publiques.",
+        "features": [
+          "Extraction et traitement de données web via scraping et APIs OSINT",
+          "Système d’alerte basé sur des mots-clés et scores de risque (ex : pollution, déforestation, pratiques illégales)",
+          "Graphe interactif montrant les dépendances critiques entre fournisseurs",
+          "Carte mondiale des sites industriels avec niveaux de risque associés par région"
+        ],
+        "techStack": [
+          {
+            "name": "React",
+            "reason": "pour le développement rapide d’une interface interactive."
+          },
+          {
+            "name": "D3.js",
+            "reason": "pour créer des visualisations dynamiques (graphe et heatmap)."
+          },
+          {
+            "name": "Python / Node.js",
+            "reason": "pour le scraping de données et l’analyse sémantique des contenus publics."
+          },
+          {
+            "name": "APIs OSINT",
+            "reason": "pour enrichir la base de données fournisseurs à partir de sources externes."
+          }
+        ],
+        "visuals": [
+          {
+            "title": "Graphique de dépendance fournisseurs",
+            "description": "Affichage des relations critiques entre fournisseurs selon leur spécialité (aérostructure, propulsion, etc.) et le niveau de risque.",
+            "file": "supplier-dependency-graph"
+          },
+          {
+            "title": "Heatmap des localisations à risque",
+            "description": "Carte des sites industriels liés à la supply chain, filtrable par pays et couleur de risque.",
+            "file": "supplier-risk-heatmap"
+          }
+        ]
+      },
       "achievements": [
-        "Prix de la solution la plus innovante",
-        "Prototype montrant une réduction potentielle de 5 % de consommation",
-        "Prototype finalisé en moins de 48h"
+        "Prototype fonctionnel finalisé et présenté devant un jury Airbus",
+        "Excellents retours sur l’UX et la pertinence des visualisations"
       ]
     }
   },
@@ -182,7 +422,7 @@
     "botbutler": {
       "name": "BotButler",
       "duration": "Janvier 2023 – Présent",
-      "github": null,
+      "github": "https://github.com/BitBricoleurs/AREA-MOBILE",
       "overview": "BotButler est une plateforme d'assistants IA capable de se connecter aux outils internes des entreprises (Slack, Jira, Notion, etc.) pour automatiser les workflows, fournir des réponses contextuelles et agir de manière proactive.",
       "context": "L'outil a été conçu pour répondre aux besoins des entreprises souhaitant rendre leurs données internes exploitables par une IA, tout en conservant une maîtrise fine des permissions et des connexions entre outils. Il s'inscrit dans une logique de productivité augmentée par l'IA dans des environnements distribués. Audience: PMEs, équipes produit, support, ou toute entreprise utilisant plusieurs outils SaaS.",
       "app": {
@@ -314,7 +554,7 @@
     "getInTouch": "Entrer en contact",
     "emailAddress": "harry.viennot@example.com",
     "githubHandle": "github.com/harryviennot",
-    "linkedinHandle": "linkedin.com/in/harryviennot",
+    "linkedinHandle": "linkedin.com/in/harry-viennot",
     "sendMessageTitle": "Envoyer un message",
     "form": {
       "nameLabel": "Nom",
@@ -329,10 +569,35 @@
       "message": "L'expérience que vous recherchez n'existe pas."
     },
     "backToExperience": "Retour aux expériences",
-    "overviewTitle": "Présentation",
-    "responsibilitiesTitle": "Responsabilités",
+    "overviewTitle": "Contexte",
     "toolsTitle": "Outils & Technologies",
-    "achievementsTitle": "Principales réalisations"
+    "project": {
+      "title": "Projets",
+      "context": "Contexte",
+      "objective": "Objectif",
+      "contributions": "Contributions",
+      "tools": "Outils & Technologies",
+      "method": "Méthode",
+      "results": "Résultats",
+      "challenges": "Défis"
+    },
+    "contextTitle": "Contexte",
+    "challengeTitle": "Défi",
+    "solutionTitle": "Solution"
+  },
+  "hackathonDetailPage": {
+    "notFound": {
+      "title": "Hackathon introuvable",
+      "message": "Le hackathon que vous recherchez n'existe pas."
+    },
+    "article": "Article",
+    "context": "Contexte",
+    "challenge": "Défi",
+    "solution": "Solution",
+    "functionality": "Fonctionnalités principales",
+    "techStackTitle": "Outils & Technologies",
+    "screenshots": "Captures d'écran",
+    "achievements": "Réalisations"
   },
   "projectDetailPage": {
     "notFound": {
