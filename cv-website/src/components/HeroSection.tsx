@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                href="/harry-viennot-resume.pdf"
+                href="/CVHarryViennotIT.pdf"
                 download
                 className="rounded-md bg-blue-600 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-all duration-300"
               >
