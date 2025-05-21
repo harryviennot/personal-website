@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ExperienceDetailPage from "./pages/ExperienceDetailPage";
+import HackathonDetailPage from "./pages/HackathonDetailPage";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -25,6 +26,11 @@ function App() {
               path="/projects/:projectName"
               element={<ProjectDetailPage />}
             />
+            <Route
+              path="/hackathons/:hackathonName"
+              element={<HackathonDetailPage />}
+            />
+
             <Route
               path="/experience/:experienceName"
               element={<ExperienceDetailPage />}
