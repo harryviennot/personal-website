@@ -70,7 +70,7 @@ const ProjectDetailPage: React.FC = () => {
           block: "center", // Centers the element in the viewport
         });
       }
-    }, 300); // Increased delay for more reliable scrolling
+    }, 400); // Increased delay for more reliable scrolling
   };
 
   const handleBackToProjects = () => {

@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +25,30 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navigateToSection = (sectionId: string) => {
+    // If already on home page, just scroll
+    if (isHomePage) {
+      scrollToSection(sectionId);
+    } else {
+      // If on another page, navigate to home and then scroll after a delay
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }, 400);
+    }
+
+    // Close mobile menu if open
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -43,6 +72,14 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -60,7 +97,7 @@ const Navbar: React.FC = () => {
             className="flex-shrink-0"
           >
             <button
-              onClick={() => window.scrollTo(0, 0)}
+              onClick={handleLogoClick}
               className="text-xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-300"
             >
               {t("navbar.brand")}
@@ -70,25 +107,25 @@ const Navbar: React.FC = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               <button
-                onClick={() => scrollToSection("about")}
+                onClick={() => navigateToSection("about")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
                 {t("navbar.about")}
               </button>
               <button
-                onClick={() => scrollToSection("experience")}
+                onClick={() => navigateToSection("experience")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
                 {t("navbar.experience")}
               </button>
               <button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => navigateToSection("projects")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
                 {t("navbar.projects")}
               </button>
               <button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => navigateToSection("contact")}
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
               >
                 {t("navbar.contact")}
@@ -102,7 +139,7 @@ const Navbar: React.FC = () => {
                 {t("navbar.github")}
               </a>
               <a
-                href="https://linkedin.com/in/harryviennot"
+                href="https://linkedin.com/in/harry-viennot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2"
@@ -143,37 +180,25 @@ const Navbar: React.FC = () => {
       <div className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
           <button
-            onClick={() => {
-              scrollToSection("about");
-              setIsMobileMenuOpen(false);
-            }}
+            onClick={() => navigateToSection("about")}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
             {t("navbar.about")}
           </button>
           <button
-            onClick={() => {
-              scrollToSection("experience");
-              setIsMobileMenuOpen(false);
-            }}
+            onClick={() => navigateToSection("experience")}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
             {t("navbar.experience")}
           </button>
           <button
-            onClick={() => {
-              scrollToSection("projects");
-              setIsMobileMenuOpen(false);
-            }}
+            onClick={() => navigateToSection("projects")}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
             {t("navbar.projects")}
           </button>
           <button
-            onClick={() => {
-              scrollToSection("contact");
-              setIsMobileMenuOpen(false);
-            }}
+            onClick={() => navigateToSection("contact")}
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
           >
             {t("navbar.contact")}
@@ -187,7 +212,7 @@ const Navbar: React.FC = () => {
             {t("navbar.github")}
           </a>
           <a
-            href="https://linkedin.com/in/harryviennot"
+            href="https://linkedin.com/in/harry-viennot"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-gray-800 hover:text-gray-600 transition-colors duration-300 px-3 py-2 w-full text-left"
