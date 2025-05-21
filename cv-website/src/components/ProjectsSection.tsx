@@ -8,7 +8,7 @@ interface ProjectCardProps {
   slug: string;
   overview: string;
   duration: string;
-  githubUrl: string | null;
+  github: string | null;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   slug,
   overview,
   duration,
-  githubUrl,
+  github,
 }) => {
   const { t } = useTranslation();
   return (
@@ -31,9 +31,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <p className="text-sm text-gray-500 mb-3">{duration}</p>
       <p className="text-gray-700 my-4 line-clamp-3">{overview}</p>
       <div className="flex space-x-4">
-        {githubUrl && (
+        {github && (
           <a
-            href={githubUrl}
+            href={github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-gray-800 hover:text-gray-600 transition-colors duration-300"
@@ -81,7 +81,7 @@ const ProjectsSection: React.FC = () => {
     name: t(`projects.${slug}.name`),
     overview: t(`projects.${slug}.overview`),
     duration: t(`projects.${slug}.duration`),
-    githubUrl: t(`projects.${slug}.github`) || null,
+    github: t(`projects.${slug}.github`) || null,
   }));
 
   return (
@@ -105,7 +105,7 @@ const ProjectsSection: React.FC = () => {
                 slug={project.slug}
                 overview={project.overview}
                 duration={project.duration}
-                githubUrl={project.githubUrl}
+                github={project.github}
               />
             ))}
           </div>
